@@ -1,56 +1,18 @@
-import React from 'react';
+import React from 'react'
+import {BrowserRouter, Route} from 'react-router-dom'
+import Menu from './Menu'
+import Usuarios from './usuarios';
 
-const App = () => {
+const Tareas = () => <div>Tareas</div>
 
-  const ponerFilas = () => [
-    <tr>
-    <td>
-      Claudia
-    </td>
-    <td>
-      email@ejemplo.com
-    </td>
-    <td>
-      clauach.com
-    </td>
-  </tr>,
-
-<tr>
-<td>
-  Platzi
-</td>
-<td>
-  email-platzi@ejemplo.com
-</td>
-<td>
-  platzi.com
-</td>
-</tr>
-  ]
-
-  return(
+const App = () => (
+  <BrowserRouter>
+    <Menu />
     <div className="margen">
-    <table className="tabla">
-      <thead>
-        <tr>
-          <th>
-            Nombre
-          </th>
-          <th>
-            Correo
-          </th>
-          <th>
-            Enlace
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        { ponerFilas()}
-        
-      </tbody>
-    </table>
+        <Route exact path='/' component={ Usuarios }/>
+        <Route exact path='/tareas' component={ Tareas }/>
     </div>
-  )
-}
+  </BrowserRouter>
+);
 
 export default App;
