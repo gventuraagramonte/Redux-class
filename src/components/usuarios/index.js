@@ -4,6 +4,7 @@ import reducers from '../../reducers';
 import * as usuariosActions from '../../actions/usuariosActions'
 import Spinner from '../general/Spinner'
 import Fatal from '../general/Fatal'
+import Tabla from './Tabla'
 
 class Usuarios extends Component {
  
@@ -22,48 +23,15 @@ class Usuarios extends Component {
       return <Fatal mensaje = { this.props.error}/>
     }
 
-    return (
-      <table className="tabla">
-        <thead>
-          <tr>
-            <th>
-              Nombre
-            </th>
-            <th>
-              Correo
-            </th>
-            <th>
-              Enlace
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          { this.ponerFilas()}
-          
-        </tbody>
-      </table>
-    )
+    return <Tabla />
+      
   }
 
-  ponerFilas = () => (
-    this.props.usuarios.map((usuario) => (
-        <tr key={usuario.id}>
-          <td>
-            {usuario.name}
-          </td>
-          <td>
-            {usuario.email}
-          </td>
-          <td>
-            {usuario.website}
-          </td>
-        </tr>
-    ) )
-  )
-
+  
   render () {
     return (
       <div >
+        <h1>Usuarios</h1>
         { this.ponerContenido()}
       </div>
     )
