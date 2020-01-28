@@ -8,10 +8,10 @@ import Tabla from './Tabla'
 
 class Usuarios extends Component {
  
-
-  componentDidMount () {
-
-  this.props.traerTodos();
+componentDidMount () {
+    if (!this.props.usuarios.length){
+      this.props.traerTodos();
+    }
   };
 
   ponerContenido = () => {
