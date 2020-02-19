@@ -10,7 +10,7 @@ export const traerPorUsuario = (key) => async (dispatch, getState) => {
     const {publicaciones} = getState().publicacionesReducer;
 
     const usuario_id = usuarios[key].id
-    const respuesta = await axios.get(`http://jsonplaceholder.typicode.com/posts?userID=${usuario_id}`)
+    const respuesta = await axios.get(`http://jsonplaceholder.typicode.com/posts?userId=${usuario_id}`)
 
     const publicaciones_actualizadas = [
         ...publicaciones,
